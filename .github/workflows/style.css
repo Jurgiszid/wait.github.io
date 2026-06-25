@@ -1,0 +1,54 @@
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+.screen {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(
+    -45deg,
+    #020617,
+    #0f172a,
+    #1e293b,
+    #020617
+  );
+
+  background-size: 400% 400%;
+  animation: bgMove 10s infinite;
+}
+
+.title {
+  color: white;
+  font-size: clamp(2rem, 8vw, 8rem);
+  font-family: Arial, sans-serif;
+  font-weight: 900;
+  z-index: 2;
+}
+
+.glow {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: rgba(59,130,246,.3);
+  border-radius: 50%;
+  filter: blur(100px);
+}
+
+@keyframes bgMove {
+  0% { background-position:0% 50%; }
+  50% { background-position:100% 50%; }
+  100% { background-position:0% 50%; }
+}
+
+@media (max-width:768px){
+  .title{
+    font-size:3rem;
+  }
+}
